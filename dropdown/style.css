@@ -1,0 +1,27 @@
+body { background: #ddd; }
+
+[class*='opens']:hover > ul{ display: inherit; }
+
+[class*='opens'] > ul li { display: block; }
+
+.deep {
+	position: absolute;
+	left: 90%;
+	padding: 0px;
+	width: 100%;
+}
+
+ul, li { cursor: pointer; }
+
+nav > ul li {
+	display: inline-block;
+	padding: 5px 10px;
+	background: #fff;
+	border: 1px solid #888;
+}
+
+nav ul ul {
+	display: none;
+	position: absolute;
+	padding: 5px;
+}
