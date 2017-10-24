@@ -1,5 +1,4 @@
 var theImage = document.getElementById('img');
-var instances = [1, 2, 3, 4];
 var x = 1;
 
 
@@ -18,9 +17,9 @@ function goLeft(){
 setInterval(function(){
 	theImage.style.backgroundImage = 'url(images/img_' + x + '.jpg)';
 	x++;
-	console.log("auto: " + x);
 
 	if(x >= 5){
-		x = 0;
+		x = 1;
 	}
+	console.log("auto: " + x);
 }, 2000);
