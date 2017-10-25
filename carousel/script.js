@@ -1,25 +1,35 @@
-var theImage = document.getElementById('img');
-var x = 1;
+var image_pos = document.getElementById('images');
+var rightA = document.getElementById('right_A');
+var leftA = document.getElementById('left_A');
+var pos = 600;
+// (setInterval()=> {
+// 	pos-=600;
+// 	image_pos.style.left = pos;
+// },16);
 
+rightA.addEventListener('click',function(event){
+	pos-=600;
+	image_pos.style.left = pos + 'px';
+});
 
-function goRight(){
-	x+=1;
-	theImage.style.backgroundImage = 'url(images/img_' + x + '.jpg)';
-	console.log("clicked: " + x);
-}
+leftA.addEventListener('click',function(event){
+	pos+=600;
+	image_pos.style.left = pos + 'px';
+});
 
-function goLeft(){
-	x-=1;
-	console.log("clicked: " + x);
-	theImage.style.backgroundImage = 'url(images/img_' + x + '.jpg)';
-}
+(function(){
+	var callback = function(){
+		
+		pos-=600;
+		if(pos <= -2400 || pos >= 0){
+			pos = 0;
+			image_pos.style.left = pos + 'px';
+		}
+		image_pos.style.left = pos + 'px';
+		
+		console.log(pos);
+	};
 
-setInterval(function(){
-	theImage.style.backgroundImage = 'url(images/img_' + x + '.jpg)';
-	x++;
-
-	if(x >= 5){
-		x = 1;
-	}
-	console.log("auto: " + x);
-}, 2000);
+	callback();
+	window.setInterval(callback, 3000);
+})();
