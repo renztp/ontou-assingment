@@ -4,9 +4,10 @@ body {
 .inside_carousel {
 	width: 600px;
 	height: 300px;
-	border: 1px solid #ddd;
+	border: 1px solid gray;
 	position: relative;
 	overflow: hidden;
+	box-shadow: 7px 7px 15px gray;
 }
 
 [id*='_A']{
@@ -15,6 +16,9 @@ body {
 	background: #ddd;
 	padding: 10px;
 	opacity: 0.5;
+	cursor: pointer;
+}
+[id*='butt']{
 	cursor: pointer;
 }
 
@@ -58,4 +62,8 @@ ul#images li {
 #buttons li {
 	color: gray;
 	opacity: 0.8;
+}
+
+.active{
+	color: #fff;
 }
